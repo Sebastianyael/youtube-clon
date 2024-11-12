@@ -1,11 +1,12 @@
 *{
-    padding: 0;
+    padding: 0px;
     margin: 0;
 }
 
 body {
     background-color: #0F0F0F;
-    display: block;
+    display: flex;
+    
 }
 
 header {
@@ -47,31 +48,6 @@ header .right {
 }
 
 
-aside{
-    width: var(--aside-width);
-    height: 782px;
-    background-color: #0F0F0F;
-    display: block;
-    align-items:center;
-    justify-content: center;
-    margin-top: -39px;
-    
-}
-
-.flex-container{
-    width: 93%;
-    height: 40px;
-    background-color: #0F0F0F;
-    display: flex;
-    margin-left: 75px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 6%;
-    
-}
-
 button {
     background-color: transparent;
     border: none;
@@ -81,10 +57,11 @@ button {
 
 }
 
-    .btn-icon {
+.btn-icon {
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    border-color: none;
     color: #999;
 
 }
@@ -160,9 +137,6 @@ header .user{
     background-color: transparent;
     font-size: 15px;
     border-radius: 20px;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
     padding: 10px 20px;
     outline: 2px solid  rgb(40, 40, 40);
 }
@@ -188,153 +162,46 @@ header .user{
     
 }
  
-aside button{
-    color: rgb(232, 230, 230);
-    background-color: #0F0F0F;
+.video{
+    display:flex;
+    flex-direction:row;
+    background-color: transparent;
+    height: 550px;
+    width: 1050px;
+    position: absolute;
+    transform: translate(30px, 50px); 
+    border: 2px solid white;
+    align-items:end;
+
+}
+
+div.containerright{
+    background-color: red;
+    width: 525px;
+    height: 40px;
+    position: relative;
     align-items: center;
     justify-content: center;
-    width: 65px;
-    height: 70px;
-    border-radius: 15%;
     
+   
 }
 
-aside p{
-    font-size: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-aside :hover{
-    cursor: pointer;
-    background-color: #302f2f;
-    align-items: center;
-}
- 
-section button{
-    display: inline-block;
-    padding: 10px 20px; 
-    font-size: 14px; 
-    border: 2px; 
-    border-radius: 7px; 
-    background-color: #272727; 
-    font-weight: bolder;
-    color: #fff;
-    cursor: pointer; 
-    text-align: center; 
-    
-}
-
-.flex-container button:hover{
-    background-color: rgb(86, 85, 85);
-
-}
-
-#arrow{
-    color: rgb(173, 171, 171);
-    width: 5px;
-    border-radius: 50%;
-    background: none;
-    
-}
-
-#arrow:hover{
-    background-color: rgb(46, 45, 45);
-}
-
-
-div.miniatura{
-    display: block;
-    width: 320px;
-    height: 330px;
-    background-color: transparent;
-    padding: 10px 10px 10px 10px;
-    border-radius: 20px;
-}
-div.miniatura img{
-    width: 320px;
-    height: 210px;
-    border-radius: 10px;
-}
-
-div img.canal{
-    width: 40px;
+div.containerleft{
+    background-color: blue;
+    width: 525px;
     height: 40px;
-    border-radius: 0%;
-    margin-top: 0px;
-}
-
-div.miniatura:hover{
-    cursor: pointer;
-    background-color: rgb(42, 42, 42);
-
-}
-
-div.titulos{
     display: flex;
-    width: 320;
-    height: 30px;
-    background-color: transparent;
-    padding: 1%;
+    align-items: center;
+    
 
 }
 
 
-div.titulos p{
-    color: white;
-    margin-left: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+div.containerleft button{
+    color: red;
+    font-size: 36px;
+    transform: translate( 30px); 
+    
+    
 }
 
-
-div.vistas{
-    background-color: transparent;
-    width: 100%;
-    height:30px ;
-}
-
-div.vistas p{
-    color: gray;
-    margin-left: 60px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: medium;
-
-}
-
-    /* ":root" se utiliza para definir variables CSS globales que pueden ser reutilizadas en todo el documento */
-:root {
-        /* Define la altura del encabezado como una variable CSS */
-    --header-height: 56px;
-        /* Define el ancho del aside como una variable CSS */
-    --aside-width: 75px;
-        /* Define la altura del contenedor de categorías como una variable CSS */
-    --categories-container-height: 56px;
-}
-
-.categories-container {
-        /* Establece la altura del contenedor de categorías utilizando la variable definida */
-    height: var(--categories-container-height);
-}
-
-.feed {
-        /* Calcula el tamaño total en la parte superior combinando la altura del encabezado y el contenedor de categorías */    
-    --top-size: calc(var(--header-height) + var(--categories-container-height));
-        /* Usa un diseño de cuadrícula para el contenedor */    
-    display: grid;
-        /* Crea cuatro columnas iguales en la cuadrícula */    
-    grid-template-columns: repeat(4, 1fr);
-        /* Establece la posición superior según la variable calculada anteriormente */    
-    top: var(--top-size);
-        /* Posiciona el contenedor de manera absoluta dentro de su contenedor principal */    
-    position: absolute;
-        /* Establece la posición desde la izquierda utilizando la anchura del contenedor lateral */    
-    left: var(--aside-width);
-        /* Calcula el ancho del contenedor restando la anchura del contenedor lateral del ancho total de la ventana */    
-    width: calc(100vw - var(--aside-width));
-        /* Calcula la altura del contenedor restando el tamaño superior calculado de la altura total de la ventana */    
-    height: calc(100vh - var(--top-size));
-        /* Permite el desplazamiento vertical si el contenido sobrepasa la altura del contenedor */    
-    overflow-y: scroll;
-}
